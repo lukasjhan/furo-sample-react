@@ -44,7 +44,7 @@ const Header = () => {
           margin: "auto",
         }}
       >
-        <Link to="/">
+        <a href="https://www.furo.one/" target={"_blank"}>
           <div
             style={{
               float: "left",
@@ -55,7 +55,7 @@ const Header = () => {
               backgroundSize: "cover",
             }}
           ></div>
-        </Link>
+        </a>
         <Menu theme="dark" mode="horizontal" selectable={false}>
           <Menu.Item
             key="1"

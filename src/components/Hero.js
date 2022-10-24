@@ -8,8 +8,7 @@ const Hero = () => {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
-        // backgroundColor: "red",
-        width: "70%",
+        // width: "70%",
         margin: "auto",
         padding: "60px 0",
       }}
@@ -24,11 +23,11 @@ const Hero = () => {
         }}
       />
       <h1 style={{ fontSize: "2.5em", fontWeight: 600 }}>
-        React.js Sample Project
+        Furo에 오신 것을 환영합니다
       </h1>
-      <p style={{ fontSize: "1.5em", fontWeight: 300 }}>
-        This is a sample application that demonstrates an authentication flow
-        for an SPA, using React.js
+      <p style={{ fontSize: "1.5em", fontWeight: 400 }}>
+        React.js 어플리케이션을 통해 Furo의 빠르고 직관적인 로그인을 경험해
+        보세요
       </p>
     </div>
   );

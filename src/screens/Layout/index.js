@@ -21,7 +21,7 @@ function RequireAuth({ children }) {
 const LayoutWithRoute = ({ auth }) => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Layout className="site-layout" style={{ backgroundColor: "white" }}>
+      <Layout style={{ backgroundColor: "white" }}>
         <Header />
         <Content
           style={{

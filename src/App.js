@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -12,14 +12,13 @@ export default function App() {
   return (
     <FuroProvider
       domain={"https://dev.auth.furo.one"}
-      clientId={"368070d851a35d76a50ea6da6ac314b7"}
+      clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin + "/"}
     >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout auth={false} />}>
             <Route index element={<Home />} />
-            {/* <Route path="private" element={<Home />} /> */}
             <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>
