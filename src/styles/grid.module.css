@@ -1,0 +1,21 @@
+.contentHeader {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.gutter {
+  margin-bottom: 50px;
+}
+
+.link {
+  margin-right: 5px;
+}

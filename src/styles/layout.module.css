@@ -1,0 +1,24 @@
+.footer {
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #00000008;
+  margin-top: 5em;
+}
+
+.nav {
+  padding: 0px 20px;
+  max-width: 960px;
+  margin: auto;
+}
+
+.logo {
+  float: left;
+  width: 80px;
+  height: 39px;
+  margin: 12px 24px 12px -10px;
+  background-size: cover;
+}
+
+.header {
+  padding: 0px;
+}

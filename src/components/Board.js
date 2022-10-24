@@ -1,40 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Button, Typography } from "antd";
 import { useFuro } from "furo-react";
 import { WarningOutlined } from "@ant-design/icons";
+import styles from "../styles/board.module.css";
 
 const { Text } = Typography;
 
 const Board = () => {
   const { user, loginWithRedirect } = useFuro();
   const hasClientId =
-    process.env.REACT_APP_CLIENT_ID === "YOUR_CLIENT_ID_GOES_HERE";
+    process.env.REACT_APP_CLIENT_ID !== "YOUR_CLIENT_ID_GOES_HERE";
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: "#111b27",
-          width: "100%",
-          height: "70%",
-          padding: 20,
-          borderRadius: 15,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
+    <div className={styles.container}>
+      <div className={styles.code}>
         {user ? (
           <SyntaxHighlighter
             language="javascript"
@@ -46,10 +27,12 @@ const Board = () => {
           </SyntaxHighlighter>
         ) : (
           <>
-            <Text type="danger" style={{ paddingBottom: 10 }}>
-              <WarningOutlined style={{ paddingRight: 5 }} />
-              Client ID 가 설정되지 않았습니다
-            </Text>
+            {!hasClientId && (
+              <Text type="danger" className={styles.warning}>
+                <WarningOutlined className={styles.icon} />
+                Client ID 가 설정되지 않았습니다
+              </Text>
+            )}
             <Button
               type="primary"
               size="large"

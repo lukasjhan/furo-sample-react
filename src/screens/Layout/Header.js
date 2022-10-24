@@ -1,12 +1,12 @@
 import React from "react";
-import { Layout, Menu, Dropdown, Avatar, message } from "antd";
+import { Layout, Menu, Dropdown, Avatar } from "antd";
 import { useFuro } from "furo-react";
 import {
   UserOutlined,
   ImportOutlined,
   ExportOutlined,
 } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import styles from "../../styles/layout.module.css";
 
 const Header = () => {
   const { logout, user, loginWithRedirect } = useFuro();
@@ -36,24 +36,14 @@ const Header = () => {
   );
 
   return (
-    <Layout.Header style={{ padding: 0 }}>
-      <div
-        style={{
-          padding: "0px 20px",
-          maxWidth: 960,
-          margin: "auto",
-        }}
-      >
-        <a href="https://www.furo.one/" target={"_blank"}>
+    <Layout.Header className={styles.header}>
+      <div className={styles.nav}>
+        <a href="https://www.furo.one/" target={"_blank"} rel="noreferrer">
           <div
             style={{
-              float: "left",
-              width: "80px",
-              height: "39px",
-              margin: "12px 24px 12px -10px",
               backgroundImage: `url('/furo_text.svg')`,
-              backgroundSize: "cover",
             }}
+            className={styles.logo}
           ></div>
         </a>
         <Menu theme="dark" mode="horizontal" selectable={false}>

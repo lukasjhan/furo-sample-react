@@ -1,21 +1,18 @@
 import React from "react";
 import { Col, Row } from "antd";
 import { LinkOutlined } from "@ant-design/icons";
+import styles from "../styles/grid.module.css";
 
 const Content = ({ subject, content, link }) => {
   return (
     <div>
       <a
         href={link}
-        style={{
-          display: "block",
-          fontSize: "1.2em",
-          fontWeight: 600,
-          marginBottom: 5,
-        }}
+        className={styles.contentHeader}
         target="_blank"
+        rel="noreferrer"
       >
-        <LinkOutlined style={{ marginRight: 5 }} />
+        <LinkOutlined className={styles.link} />
         {subject}
       </a>
       <span>{content}</span>
@@ -26,17 +23,8 @@ const Content = ({ subject, content, link }) => {
 const Grid = () => {
   return (
     <div>
-      <h1
-        style={{
-          fontSize: "2em",
-          fontWeight: 600,
-          textAlign: "center",
-          padding: "20px 0",
-        }}
-      >
-        더 알아보기
-      </h1>
-      <Row gutter={50} style={{ marginBottom: 50 }}>
+      <h1 className={styles.title}>더 알아보기</h1>
+      <Row gutter={50} className={styles.gutter}>
         <Col span={12}>
           <Content
             subject={"Furo 콘솔"}

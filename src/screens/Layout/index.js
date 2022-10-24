@@ -29,9 +29,6 @@ const LayoutWithRoute = ({ auth }) => {
             maxWidth: 960,
             margin: "auto",
             width: "100%",
-            // backgroundColor: "green",
-            // display: "flex",
-            // justifyContent: "center",
           }}
         >
           {auth ? (
