@@ -45,7 +45,7 @@ const Board = () => {
                 <Tooltip
                   title={
                     <a
-                      href="https://docs.furo.one/getting-started/start-with-react#2.-furo-provider"
+                      href="https://github.com/furo-official/furo-sample-react#%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95"
                       target={"_blank"}
                       rel="noreferrer"
                     >
