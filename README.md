@@ -1,6 +1,6 @@
 # Furo Sample React
 
-### Furo의 빠르고 직관적인 로그인을 경험해 보세요
+### Furo의 빠르고 직관적인 로그인을 경험해 보세요.
 본 프로젝트는 [furo-react](https://www.npmjs.com/package/furo-react) 를 활용한 로그인 시스템 예제입니다. 전체 서비스에 대한 상세한 설명은 [공식문서](https://docs.furo.one/)를 참조하세요.
 
 <hr />
