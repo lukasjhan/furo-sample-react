@@ -42,7 +42,21 @@ const Board = () => {
             {!hasClientId && (
               <Text type="danger" className={styles.warning}>
                 <WarningOutlined className={styles.icon_warning} />
-                Client ID 가 설정되지 않았습니다
+                <Tooltip
+                  title={
+                    <a
+                      href="https://docs.furo.one/getting-started/start-with-react#2.-furo-provider"
+                      target={"_blank"}
+                      rel="noreferrer"
+                    >
+                      설정하러 가기
+                    </a>
+                  }
+                  color={"#ffffff10"}
+                >
+                  Client ID
+                </Tooltip>{" "}
+                가 설정되지 않았습니다
               </Text>
             )}
             <Button
