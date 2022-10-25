@@ -40,7 +40,7 @@ const Grid = () => {
           />
         </Col>
       </Row>
-      <Row gutter={20}>
+      <Row gutter={50}>
         <Col span={12}>
           <Content
             subject={"Discord"}

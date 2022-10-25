@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Button, Typography } from "antd";
 import { useFuro } from "furo-react";
 import { WarningOutlined } from "@ant-design/icons";
 import styles from "../styles/board.module.css";
+import { ConfigContext } from "../contexts/ConfigContext";
 
 const { Text } = Typography;
 
 const Board = () => {
   const { user, loginWithRedirect } = useFuro();
-  const hasClientId =
-    process.env.REACT_APP_CLIENT_ID !== "YOUR_CLIENT_ID_GOES_HERE";
+  const hasClientId = useContext(ConfigContext);
 
   return (
     <div className={styles.container}>

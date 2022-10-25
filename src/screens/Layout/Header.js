@@ -1,5 +1,5 @@
-import React from "react";
-import { Layout, Menu, Dropdown, Avatar } from "antd";
+import React, { useContext } from "react";
+import { Layout, Menu, Dropdown, Avatar, Tooltip } from "antd";
 import { useFuro } from "furo-react";
 import {
   UserOutlined,
@@ -7,9 +7,11 @@ import {
   ExportOutlined,
 } from "@ant-design/icons";
 import styles from "../../styles/layout.module.css";
+import { ConfigContext } from "../../contexts/ConfigContext";
 
 const Header = () => {
   const { logout, user, loginWithRedirect } = useFuro();
+  const hasClientId = useContext(ConfigContext);
 
   const menu = (
     <Menu>
@@ -28,8 +30,19 @@ const Header = () => {
           key="2"
           icon={<ExportOutlined />}
           onClick={loginWithRedirect}
+          disabled={!hasClientId}
         >
-          로그인
+          {!hasClientId ? (
+            <Tooltip
+              title={"Client ID가 설정되지 않았습니다"}
+              placement="bottom"
+              color={"red"}
+            >
+              로그인
+            </Tooltip>
+          ) : (
+            "로그인"
+          )}
         </Menu.Item>
       )}
     </Menu>
@@ -47,15 +60,8 @@ const Header = () => {
           ></div>
         </a>
         <Menu theme="dark" mode="horizontal" selectable={false}>
-          <Menu.Item
-            key="1"
-            style={{ marginLeft: "auto" }}
-            onClick={() => window.open("https://docs.furo.one")}
-          >
-            문서
-          </Menu.Item>
           <Dropdown overlay={menu} placement="bottomRight">
-            <Menu.Item key="2">
+            <Menu.Item key="1" style={{ marginLeft: "auto" }}>
               <Avatar size={40} icon={<UserOutlined />} src={user?.picture} />
             </Menu.Item>
           </Dropdown>
