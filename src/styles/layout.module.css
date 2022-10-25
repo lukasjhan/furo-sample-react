@@ -1,6 +1,6 @@
 .footer {
   text-align: center;
-  background: #fff;
+  background: inherit;
   border-top: 1px solid #00000008;
   margin-top: 5em;
 }
