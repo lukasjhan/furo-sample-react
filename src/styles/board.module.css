@@ -15,12 +15,24 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 30vh;
 }
 
 .warning {
   padding-bottom: 10px;
 }
 
-.icon {
+.icon_warning {
   padding-right: 5px;
+}
+
+.icon_logout {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.button_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }

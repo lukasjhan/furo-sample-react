@@ -22,8 +22,7 @@ const Content = ({ subject, content, link }) => {
 
 const Grid = () => {
   return (
-    <div>
-      <h1 className={styles.title}>더 알아보기</h1>
+    <div className={styles.container}>
       <Row gutter={50} className={styles.gutter}>
         <Col span={12}>
           <Content

@@ -9,7 +9,7 @@ const Home = () => {
         <Col span={12}>
           <Hero />
         </Col>
-        <Col span={12}>
+        <Col span={12} style={{ display: "flex" }}>
           <Grid />
         </Col>
       </Row>

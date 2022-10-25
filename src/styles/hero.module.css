@@ -5,11 +5,29 @@
   padding: 60px 0px;
 }
 
-.icon {
-  width: 80px;
-  height: 80px;
-  margin: 10px;
+.icon_react {
+  width: 70px;
+  height: 70px;
   background-size: cover;
+}
+
+.icon_furo {
+  width: 70px;
+  height: 70px;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.icon_plus {
+  font-size: 20px;
+}
+
+.logo_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  padding: 20px 0;
 }
 
 .title {
