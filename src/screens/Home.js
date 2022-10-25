@@ -1,15 +1,15 @@
-import React from "react";
-import { Col, Row } from "antd";
-import { Hero, Board, Grid } from "../components";
+import React from 'react';
+import { Col, Row } from 'antd';
+import { Hero, Board, Grid } from '../components';
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ margin: 30 }}>
       <Row gutter={60}>
-        <Col span={12}>
+        <Col lg={12} md={24} sm={24} xs={24}>
           <Hero />
         </Col>
-        <Col span={12} style={{ display: "flex" }}>
+        <Col lg={12} md={24} sm={24} xs={24} style={{ display: 'flex' }}>
           <Grid />
         </Col>
       </Row>
