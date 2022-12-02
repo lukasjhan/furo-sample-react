@@ -25,7 +25,7 @@ const Board = () => {
               wrapLines={true}
               wrapLongLines={true}
             >
-              {'// User Info\n' + JSON.stringify(user, null, '\t')}
+              {'// Logged in user Info\n' + JSON.stringify(user, null, '\t')}
             </SyntaxHighlighter>
 
             <div className={styles.button_wrapper}>
