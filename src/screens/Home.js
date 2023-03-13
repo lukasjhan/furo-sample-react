@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
 import { Col, Row } from 'antd';
-import { Hero, Board, Grid } from '../components';
+import { Hero, Board, Grid, Tab } from '../components';
 import { ConfigContext } from '../contexts/ConfigContext';
 import { useParams } from 'react-router-dom';
 import { FuroProvider } from 'furo-react';
 
 const Home = () => {
-  const { clientId } =
-    useContext(ConfigContext);
+  const { clientId } = useContext(ConfigContext);
   const { pid } = useParams();
 
   return (
@@ -26,6 +25,7 @@ const Home = () => {
             <Grid />
           </Col>
         </Row>
+        <Tab />
         <Row>
           <Board />
         </Row>

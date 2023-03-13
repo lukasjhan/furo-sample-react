@@ -12,7 +12,7 @@ const { Text } = Typography;
 
 const Board = () => {
   const { user, loginWithRedirect, logout, isLoading } = useFuro();
-  const { hasClientId } = useContext(ConfigContext);
+  const { hasClientId, page, workspaces } = useContext(ConfigContext);
 
   if (isLoading)
     return (
@@ -33,7 +33,10 @@ const Board = () => {
               wrapLines={true}
               wrapLongLines={true}
             >
-              {'// Logged in user Info\n' + JSON.stringify(user, null, '\t')}
+              {page === 'user'
+                ? '// Logged in user Info\n' + JSON.stringify(user, null, '\t')
+                : `// user's joined Info\n` +
+                  JSON.stringify(workspaces, null, '\t')}
             </SyntaxHighlighter>
 
             <div className={styles.button_wrapper}>
