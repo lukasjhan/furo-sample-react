@@ -15,9 +15,11 @@ const Tab = () => {
   const { getAccessTokenSilently } = useFuro();
   const { setPage, setWorkspaces } = useContext(ConfigContext);
   const [loading, setLoading] = useState(true);
+  const [token, setToken] = useState();
 
   const getWorkspace = async () => {
     const token = await getAccessTokenSilently();
+    setToken(token);
     const response = await axios.get(
       `${
         process.env.REACT_APP_API_URL || 'https://dev.api.furo.one'
@@ -50,6 +52,7 @@ const Tab = () => {
     setPage(key);
   };
   if (loading) return null;
+  if (!token) return null;
   return <Tabs defaultActiveKey='1' items={items} onChange={onChange} />;
 };
 export default Tab;
