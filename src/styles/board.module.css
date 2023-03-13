@@ -13,13 +13,16 @@
   border-radius: 15px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   min-height: 30vh;
+  overflow: scroll;
+  overflow-y: hidden;
 }
 
 .warning {
   padding-bottom: 10px;
+  align-self: center;
 }
 
 .icon_warning {
