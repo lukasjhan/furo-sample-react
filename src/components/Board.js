@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Button, Typography, Tooltip } from 'antd';
+import { Button, Typography, Tooltip, Spin } from 'antd';
 import { useFuro } from 'furo-react';
 import { WarningOutlined } from '@ant-design/icons';
 import styles from '../styles/board.module.css';
@@ -11,9 +11,17 @@ import { ImportOutlined } from '@ant-design/icons';
 const { Text } = Typography;
 
 const Board = () => {
-  const { user, loginWithRedirect, logout } = useFuro();
-  const hasClientId = useContext(ConfigContext);
+  const { user, loginWithRedirect, logout, isLoading } = useFuro();
+  const { hasClientId, page, workspaces } = useContext(ConfigContext);
 
+  if (isLoading)
+    return (
+      <div className={styles.container}>
+        <div className={styles.code} style={{ alignItems: 'center' }}>
+          <Spin tip='Loading' size='large' />
+        </div>
+      </div>
+    );
   return (
     <div className={styles.container}>
       <div className={styles.code}>
@@ -25,7 +33,10 @@ const Board = () => {
               wrapLines={true}
               wrapLongLines={true}
             >
-              {'// Logged in user Info\n' + JSON.stringify(user, null, '\t')}
+              {page === 'user'
+                ? '// Logged in user Info\n' + JSON.stringify(user, null, '\t')
+                : `// user's joined Info\n` +
+                  JSON.stringify(workspaces, null, '\t')}
             </SyntaxHighlighter>
 
             <div className={styles.button_wrapper}>
@@ -39,7 +50,7 @@ const Board = () => {
           </>
         ) : (
           <>
-            {!hasClientId && (
+            {!isLoading && !hasClientId && (
               <Text type='danger' className={styles.warning}>
                 <WarningOutlined className={styles.icon_warning} />
                 <Tooltip
@@ -65,6 +76,7 @@ const Board = () => {
               shape='round'
               onClick={loginWithRedirect}
               disabled={!hasClientId}
+              style={{ alignSelf: 'center' }}
             >
               로그인 하러 가기
             </Button>
