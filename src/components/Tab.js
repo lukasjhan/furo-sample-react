@@ -22,7 +22,7 @@ const Tab = () => {
     setToken(token);
     const response = await axios.get(
       `${
-        process.env.REACT_APP_API_URL || 'https://dev.api.furo.one'
+        process.env.REACT_APP_API_URL || 'https://api.furo.one'
       }/workspaces/joined/search`,
       {
         headers: {
