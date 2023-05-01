@@ -22,7 +22,7 @@ Project Info In [Furo Console](https://console.furo.one/projects)
    ```javascript
    const clientId = "YOUR_CLIENT_ID_GOES_HERE";
    ```
-2. Input http://localhost:3000 in callbackUri of console page.
+2. Input http://localhost:3000/{clientId} in callbackUri of console page.
 
 ## Start
 
