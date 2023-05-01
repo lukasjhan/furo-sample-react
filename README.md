@@ -6,8 +6,6 @@
 
 Check Furo's [Official Documentation](https://docs.furo.one/react-sdk).
 
-# Furo Sample React
-
 ## Installation
 
 ```bash
