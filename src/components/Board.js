@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Button, Typography, Tooltip, Spin } from 'antd';
-import { useFuro } from 'furo-react';
-import { WarningOutlined } from '@ant-design/icons';
-import styles from '../styles/board.module.css';
-import { ConfigContext } from '../contexts/ConfigContext';
-import { ImportOutlined } from '@ant-design/icons';
+import React, { useContext } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Button, Typography, Tooltip, Spin } from "antd";
+import { useFuro } from "furo-react";
+import { WarningOutlined } from "@ant-design/icons";
+import styles from "../styles/board.module.css";
+import { ConfigContext } from "../contexts/ConfigContext";
+import { ImportOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
 
@@ -17,8 +17,8 @@ const Board = () => {
   if (isLoading)
     return (
       <div className={styles.container}>
-        <div className={styles.code} style={{ alignItems: 'center' }}>
-          <Spin tip='Loading' size='large' />
+        <div className={styles.code} style={{ alignItems: "center" }}>
+          <Spin tip="Loading" size="large" />
         </div>
       </div>
     );
@@ -28,19 +28,19 @@ const Board = () => {
         {user ? (
           <>
             <SyntaxHighlighter
-              language='javascript'
+              language="javascript"
               style={coldarkDark}
               wrapLines={true}
               wrapLongLines={true}
             >
-              {page === 'user'
-                ? '// Logged in user Info\n' + JSON.stringify(user, null, '\t')
+              {page === "user"
+                ? "// Logged in user Info\n" + JSON.stringify(user, null, "\t")
                 : `// user's joined Info\n` +
-                  JSON.stringify(workspaces, null, '\t')}
+                  JSON.stringify(workspaces, null, "\t")}
             </SyntaxHighlighter>
 
             <div className={styles.button_wrapper}>
-              <Tooltip title={'로그아웃'}>
+              <Tooltip title={"로그아웃"}>
                 <ImportOutlined
                   className={styles.icon_logout}
                   onClick={logout}
@@ -51,32 +51,32 @@ const Board = () => {
         ) : (
           <>
             {!isLoading && !hasClientId && (
-              <Text type='danger' className={styles.warning}>
+              <Text type="danger" className={styles.warning}>
                 <WarningOutlined className={styles.icon_warning} />
                 <Tooltip
                   title={
                     <a
-                      href='https://github.com/furo-official/furo-sample-react#%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95'
-                      target={'_blank'}
-                      rel='noreferrer'
+                      href="https://github.com/furo-official/furo-sample-react#%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95"
+                      target={"_blank"}
+                      rel="noreferrer"
                     >
                       설정하러 가기
                     </a>
                   }
-                  color={'#ffffff10'}
+                  color={"#ffffff10"}
                 >
                   Client ID
-                </Tooltip>{' '}
+                </Tooltip>{" "}
                 가 설정되지 않았습니다
               </Text>
             )}
             <Button
-              type='primary'
-              size='large'
-              shape='round'
+              type="primary"
+              size="large"
+              shape="round"
               onClick={loginWithRedirect}
               disabled={!hasClientId}
-              style={{ alignSelf: 'center' }}
+              style={{ alignSelf: "center" }}
             >
               로그인 하러 가기
             </Button>

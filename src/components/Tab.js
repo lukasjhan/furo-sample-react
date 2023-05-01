@@ -1,12 +1,12 @@
-import { Tabs } from 'antd';
-import axios from 'axios';
-import { useFuro } from 'furo-react';
-import { useContext, useEffect, useState } from 'react';
-import { ConfigContext } from '../contexts/ConfigContext';
+import { Tabs } from "antd";
+import axios from "axios";
+import { useFuro } from "furo-react";
+import { useContext, useEffect, useState } from "react";
+import { ConfigContext } from "../contexts/ConfigContext";
 
 const items = [
   {
-    key: 'user',
+    key: "user",
     label: `User`,
   },
 ];
@@ -22,7 +22,7 @@ const Tab = () => {
     setToken(token);
     const response = await axios.get(
       `${
-        process.env.REACT_APP_API_URL || 'https://api.furo.one'
+        process.env.REACT_APP_API_URL || "https://api.furo.one"
       }/workspaces/joined/search`,
       {
         headers: {
@@ -34,7 +34,7 @@ const Tab = () => {
     if (list.length > 0) {
       if (items.length < 2)
         items.push({
-          key: 'workspace',
+          key: "workspace",
           label: `Workspace`,
         });
     }
@@ -53,6 +53,6 @@ const Tab = () => {
   };
   if (loading) return null;
   if (!token) return null;
-  return <Tabs defaultActiveKey='1' items={items} onChange={onChange} />;
+  return <Tabs defaultActiveKey="1" items={items} onChange={onChange} />;
 };
 export default Tab;
